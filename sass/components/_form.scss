@@ -1,7 +1,6 @@
 .form {
     &__group:not(:last-child){
         margin-bottom: 2rem;
-       
     }
 
     &__input{
@@ -16,6 +15,10 @@
         width: 90%;
         display: block;
         transition: all .3s;
+
+        @include respond(phone){
+            width: 100%;
+        }
 
         &:focus{
             outline: none;
@@ -50,6 +53,11 @@
     &__radio-group{
         width: 49%;
         display: inline-block;
+
+        @include respond(phone){
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-label{
@@ -89,7 +97,8 @@
         }
     }
 
-    &__radio-input:checked ~ &__radio-label &__radio-button::after{
+    &__radio-input:checked ~ &__radio-label,
+    &__radio-button::after{
         opacity: 1;
     }
 }

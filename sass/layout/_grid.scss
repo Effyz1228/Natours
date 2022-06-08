@@ -5,15 +5,22 @@
     justify-content: space-evenly;
     margin: 0 auto;
     
+    
 
     @include respond(tab-port){
-        flex-direction: column;
-        //lex-wrap: wrap;
-        
+        flex-direction: column; 
+        gap: 6rem;
+        align-items: center;
+        justify-content: center;
     }
 
     &:not(:last-child) {
         margin-bottom: 8rem;
+
+        @include respond(tab-port){
+            margin-bottom: 6rem;
+            
+        }
     }
     
     // [class^="col-"]{
@@ -25,6 +32,12 @@
     .col-1-of-2{   
         flex:1;
         padding: 3rem;  
+
+        @include respond(tab-port){
+            width: 60%;
+            padding: 0;
+            text-align: center;
+        }
     }
 
 
@@ -32,6 +45,12 @@
         flex:1;
         //padding: 1rem;  
         margin: $gutter-horizontal;
+
+        @include respond(tab-port){
+            width: 60%;
+            padding: 0;
+            
+        }
     }
 }
 
@@ -50,7 +69,9 @@
     @include respond(tab-port){
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;  
+        flex-wrap: wrap; 
+        align-items: center;
+        justify-content: center; 
     }
 
     .col-1-of-3{
@@ -59,9 +80,9 @@
         margin: $gutter-horizontal;
         
 
-        @include respond(tab-port){  
-            flex: 1;
-            //lex-wrap: wrap;   
+        @include respond(tab-port){
+            width: 60%;
+            padding: 0;
             
         }
     }

@@ -10,6 +10,9 @@
 
     transform: skewX(-12deg);
 
+    @include respond(phone){
+        transform: skewX(0);
+    }
     //select all direct children
     & > * {
         //can't have two transforms on one element, have to do seperately.
@@ -25,10 +28,17 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12.01deg);
         position: relative;
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__text{
         transform: skewX(12deg);
+
+        @include respond(phone){
+            transform:skewX(0);
+        }
     }
 
     &__img{
