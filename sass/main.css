@@ -20,19 +20,19 @@ html {
   font-size: 62.5%;
 }
 
-@media (min-width: 112.5em) {
+@media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
   }
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   html {
     font-size: 50%;
   }
@@ -44,10 +44,20 @@ body {
   padding: 3rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   body {
     padding: 0;
   }
+}
+
+::-moz-selection {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+::selection {
+  background-color: #55c57a;
+  color: #fff;
 }
 
 body {
@@ -77,7 +87,7 @@ body {
           animation-timing-function: ease-out;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-primary--main {
     letter-spacing: 1rem;
     font-size: 5rem;
@@ -94,7 +104,7 @@ body {
           animation: moveInRight 1s ease-out;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-primary--sub {
     letter-spacing: .5rem;
   }
@@ -120,13 +130,13 @@ body {
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .heading-secondary {
     font-size: 3rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-secondary {
     font-size: 2.5rem;
   }
@@ -253,13 +263,13 @@ body {
   margin-bottom: 4rem !important;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .margin-bottom-medium {
     margin-top: 2rem !important;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .margin-bottom-medium {
     margin-bottom: 2rem !important;
   }
@@ -269,7 +279,7 @@ body {
   margin-bottom: 8rem !important;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .margin-bottom-big {
     margin-top: 5rem !important;
   }
@@ -279,7 +289,7 @@ body {
   margin-top: 60rem !important;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .margin-top-big {
     margin-top: 10rem !important;
   }
@@ -562,7 +572,7 @@ body {
   font-weight: 100;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em), only screen and (hover: none) {
   .card {
     position: relative;
     height: auto;
@@ -610,7 +620,7 @@ body {
   position: relative;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -633,7 +643,7 @@ body {
   outline-offset: 2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo {
     width: 33.3333333%;
     position: relative;
@@ -647,7 +657,7 @@ body {
   top: -2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p1 {
     left: -2rem;
     top: 0;
@@ -661,7 +671,7 @@ body {
   top: 2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p2 {
     left: 0;
     top: 0;
@@ -676,7 +686,7 @@ body {
   top: 10rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p3 {
     left: 2rem;
     top: 0;
@@ -744,7 +754,7 @@ body {
   transition: all .3s;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .form__input {
     width: 100%;
   }
@@ -787,7 +797,7 @@ body {
   display: inline-block;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .form__radio-group {
     width: 100%;
     margin-bottom: 2rem;
@@ -851,7 +861,7 @@ body {
           transform: skewX(-12deg);
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .story {
     -webkit-transform: skewX(0);
             transform: skewX(0);
@@ -862,15 +872,22 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  shape-outside: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
-          clip-path: circle(50% at 50% 50%);
   -webkit-transform: translateX(-3rem) skewX(12.01deg);
           transform: translateX(-3rem) skewX(12.01deg);
   position: relative;
+  border-radius: 50%;
 }
 
-@media (max-width: 37.5em) {
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+  .story__shape {
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    border-radius: none;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
   .story__shape {
     -webkit-transform: translateX(-3rem) skewX(0);
             transform: translateX(-3rem) skewX(0);
@@ -882,7 +899,7 @@ body {
           transform: skewX(12deg);
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .story__text {
     -webkit-transform: skewX(0);
             transform: skewX(0);
@@ -941,6 +958,14 @@ body {
   transition: all .3s;
 }
 
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .popup {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 .popup__content {
   position: absolute;
   top: 50%;
@@ -964,7 +989,7 @@ body {
       grid-template-columns: repeat(3, 1fr);
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .popup__content {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -973,7 +998,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__content {
     -ms-grid-rows: (1fr)[4];
         grid-template-rows: repeat(4, 1fr);
@@ -986,7 +1011,7 @@ body {
   height: 100%;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__img1, .popup__img2 {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -1005,7 +1030,7 @@ body {
   grid-row: 1/2;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .popup__img1 {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -1013,7 +1038,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__img1 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1033,7 +1058,7 @@ body {
   grid-row: 2/3;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .popup__img2 {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
@@ -1044,7 +1069,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__img2 {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -1066,7 +1091,7 @@ body {
   background-color: #fff;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .popup__right {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -1077,7 +1102,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__right {
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
@@ -1099,7 +1124,7 @@ body {
   hyphens: auto;
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__text {
     -webkit-column-count: 1;
             column-count: 1;
@@ -1150,7 +1175,7 @@ body {
   margin-bottom: 8rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .footer__logo-box {
     margin-bottom: 6rem;
   }
@@ -1167,7 +1192,7 @@ body {
   display: inline-block;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .footer__navigation {
     padding: 1rem 0 2rem 0;
   }
@@ -1208,7 +1233,7 @@ body {
   padding-top: 2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .footer__copyright {
     padding-top: 1rem;
   }
@@ -1228,7 +1253,7 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1248,7 +1273,7 @@ body {
   margin-bottom: 8rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row:not(:last-child) {
     margin-bottom: 6rem;
   }
@@ -1261,7 +1286,7 @@ body {
   padding: 3rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row .col-1-of-2 {
     width: 60%;
     padding: 0;
@@ -1276,7 +1301,7 @@ body {
   margin: 2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row .col-1-of-4 {
     width: 60%;
     padding: 0;
@@ -1303,7 +1328,7 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row-tours {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1330,7 +1355,7 @@ body {
   margin: 2rem;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row-tours .col-1-of-3 {
     width: 60%;
     padding: 0;
@@ -1341,24 +1366,32 @@ body {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/hero-small.jpg);
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
-  height: 95vh;
+  height: 85vh;
   background-position: top;
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
   .header {
-    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 185, 0, 0.8)), to(rgba(255, 119, 48, 0.8))), url(../img/hero.jpg);
-    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
+  .header {
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
   .header {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   }
 }
 
@@ -1398,14 +1431,14 @@ body {
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .navigation__background {
     top: 3.5rem;
     right: 3.5rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .navigation__background {
     top: 2.5rem;
     right: 2.5rem;
@@ -1427,14 +1460,14 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .navigation__button {
     top: 3rem;
     right: 3rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .navigation__button {
     top: 2rem;
     right: 2rem;
@@ -1561,7 +1594,7 @@ body {
   padding: 25rem 0;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-about {
     padding: 15rem 0 22rem 0;
   }
@@ -1582,7 +1615,7 @@ body {
           transform: skewY(7deg);
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-features {
     padding: 12rem 0;
   }
@@ -1594,7 +1627,7 @@ body {
   padding: 25rem 0 15rem 0;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-tours {
     padding: 20rem 0 10rem 0;
   }
@@ -1605,7 +1638,7 @@ body {
   padding: 15rem 0;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-stories {
     padding: 10rem 0;
   }
@@ -1617,7 +1650,7 @@ body {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-book {
     padding: 10rem 0;
   }
@@ -1631,14 +1664,14 @@ body {
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   .book {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
     background-size: cover;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .book {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9))), url(../img/nat-10.jpg);
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
@@ -1650,13 +1683,13 @@ body {
   padding: 6rem;
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   .book__form {
     width: 65%;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .book__form {
     width: 100%;
   }

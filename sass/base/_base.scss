@@ -29,3 +29,9 @@ body {
         padding: 0;
     }
 }
+
+//change the background-color when some text are selected
+::selection{
+    background-color: $color-primary;
+    color: #fff;
+}
